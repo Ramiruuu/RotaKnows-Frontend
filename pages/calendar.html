@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar API - RotaKnows</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/calendar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">RotaKnows</div>
+      <nav>
+        <ul>
+          <li><a href="./news.html">News API</a></li>
+          <li><a href="./weather.html">Weather API</a></li>
+          <li><a href="./calendar.html">Calendar API</a></li>
+          <li><a href="./location.html">Location API</a></li>
+          <li><a href="./traveltime.html">TravelTime API</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>Calendar API</h1>
+      <p>Sync your schedule for seamless trip planning.</p>
+      <a href="#calendar-section" class="cta-button">Try It Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="../assets/logo/apiLogo/calendar.png" alt="Calendar Sync" class="float-image">
+    </div>
+  </div>
+</section>
+
+<section id="calendar-section" class="calendar-section">
+  <div class="container">
+    <h2>Manage Your Schedule</h2>
+    <form id="calendar-form" class="calendar-form">
+      <input type="text" id="event-title" placeholder="Event Title" required>
+      <input type="date" id="event-date" required>
+      <button type="submit" class="cta-button">Add Event</button>
+    </form>
+    <div id="calendar-result" class="calendar-result">
+      <!-- Calendar events will be displayed here -->
+    </div>
+  </div>
+</section>
+
+<section id="local-highlights" class="highlights-section">
+  <div class="container">
+    <h2>Discover Local Highlights</h2>
+    <p>Make the most of your trip with recommendations on must-visit places, local events, and cultural experiences.</p>
+    
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <h3>Hidden Gems</h3>
+        <p>Find unique, less crowded spots that locals love — perfect for authentic experiences and quiet escapes.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Top Attractions</h3>
+        <p>Explore famous landmarks, museums, and parks that define your destination’s charm and history.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Local Events</h3>
+        <p>Stay informed about festivals, markets, and community activities happening during your stay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 RotaKnows. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.getElementById('calendar-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = document.getElementById('event-title').value;
+      const date = document.getElementById('event-date').value;
+      const resultDiv = document.getElementById('calendar-result');
+      
+      try {
+        const response = await fetch('/api/calendar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title, date })
+        });
+        const data = await response.json();
+        
+        if (response.ok) {
+          resultDiv.innerHTML = `
+            <h3>Event Added</h3>
+            <p>Title: ${data.title}</p>
+            <p>Date: ${data.date}</p>
+          `;
+          gsap.from(resultDiv, { opacity: 0, y: 20, duration: 1 });
+        } else {
+          resultDiv.innerHTML = `<p class="error">Error: ${data.message}</p>`;
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `<p class="error">Failed to add event. Please try again.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

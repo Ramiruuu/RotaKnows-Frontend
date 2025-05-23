@@ -1,0 +1,125 @@
+/* News Page Styles */
+.news-section {
+  padding: 60px 0;
+  background: #f9fafb;
+}
+
+.news-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.news-form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.news-form input {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-family: 'Lora', serif;
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  outline: none;
+  width: 300px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.news-form input:focus {
+  border-color: #2c3e50;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.news-form .cta-button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.news-form .cta-button:hover {
+  background-color: #2c3e50;
+  transform: translateY(-2px);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.news-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.news-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.news-card p {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.news-card a {
+  font-family: 'Montserrat', sans-serif;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.news-card a:hover {
+  color: #2c3e50;
+}
+
+.news-grid .error {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #e74c3c;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .news-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-form input {
+    width: 100%;
+    max-width: 400px;
+  }
+}

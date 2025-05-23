@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News API - RotaKnows</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/news.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">RotaKnows</div>
+      <nav>
+        <ul>
+          <li><a href="./news.html">News API</a></li>
+          <li><a href="./weather.html">Weather API</a></li>
+          <li><a href="./calendar.html">Calendar API</a></li>
+          <li><a href="./location.html">Location API</a></li>
+          <li><a href="./traveltime.html">TravelTime API</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>News API</h1>
+      <p>Stay informed with local news updates for your destination.</p>
+      <a href="#news-section" class="cta-button">Try It Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="../assets/logo/apiLogo/news.png" alt="News Updates" class="float-image">
+    </div>
+  </div>
+</section>
+
+<section id="news-section" class="news-section">
+  <div class="container">
+    <h2>Search News</h2>
+    <form id="news-form" class="news-form">
+      <input type="text" id="news-query" placeholder="Enter location or topic" required>
+      <button type="submit" class="cta-button">Search News</button>
+    </form>
+    <div id="news-result" class="news-grid">
+      <!-- News articles will be displayed here -->
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 RotaKnows. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    document.getElementById('news-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const query = document.getElementById('news-query').value;
+      const resultDiv = document.getElementById('news-result');
+      
+      try {
+        const response = await fetch(`/api/news?query=${encodeURIComponent(query)}`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await response.json();
+        
+        if (response.ok) {
+          resultDiv.innerHTML = data.articles.map(article => `
+            <div class="news-card">
+              <h3>${article.title}</h3>
+              <p>${article.description}</p>
+              <a href="${article.url}" target="_blank">Read More</a>
+            </div>
+          `).join('');
+          gsap.from('.news-card', { opacity: 0, y: 20, duration: 1, stagger: 0.2 });
+        } else {
+          resultDiv.innerHTML = `<p class="error">Error: ${data.message}</p>`;
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `<p class="error">Failed to fetch news. Please try again.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
