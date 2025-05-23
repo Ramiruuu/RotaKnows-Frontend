@@ -42,7 +42,7 @@ styles/
    ```
 2. **Open the project in VS Code or your preferred editor.**
 3. **Start a local server:**
-   - You can use the [Live Server](https://rota-knows-frontend.vercel.app/) via Vercel.
+   - You can use the [RotaKnows Live Deployment](https://rota-knows-frontend.vercel.app/) via Vercel.
    - Or use XAMPP/WAMP and place the folder in your `htdocs` directory.
 
 4. **Navigate to `http://localhost:5501` (or your configured port) in your browser.**
