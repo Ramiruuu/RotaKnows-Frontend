@@ -38,6 +38,81 @@
   margin-bottom: 1rem;
 }
 
+/* How It Works Section */
+.how-it-works {
+  background: #fff;
+  margin: 3rem auto 2rem auto;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(43,124,255,0.07);
+  max-width: 900px;
+}
+
+.how-it-works h2 {
+  color: #2b7cff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.how-it-works ol {
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  max-width: 600px;
+  padding-left: 1.2rem;
+}
+
+.how-it-works li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+/* Why RotaKnows Section */
+.why-rotaknows {
+  background: #f4f8ff;
+  margin: 2rem auto 0 auto;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(43,124,255,0.06);
+  max-width: 900px;
+}
+
+.why-rotaknows h2 {
+  color: #2b7cff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.why-rotaknows ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.why-rotaknows li {
+  margin-bottom: 1rem;
+  padding-left: 1.7rem;
+  position: relative;
+}
+
+.why-rotaknows li:before {
+  content: "✔";
+  color: #2b7cff;
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+  top: 0;
+}
+
 @media (max-width: 768px) {
   .services h1 {
     font-size: 2rem;

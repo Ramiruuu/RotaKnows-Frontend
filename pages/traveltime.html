@@ -37,19 +37,19 @@
     </div>
   </section>
 
-<section id="traveltime-section" class="traveltime-section">
-  <div class="container">
-    <h2>Calculate Travel Time</h2>
-    <form id="traveltime-form" class="traveltime-form">
-      <input type="text" id="start-location" placeholder="Start Location" required>
-      <input type="text" id="end-location" placeholder="End Location" required>
-      <button type="submit" class="cta-button">Calculate</button>
-    </form>
-    <div id="traveltime-result" class="traveltime-result">
-      <!-- Travel time data will be displayed here -->
+  <section id="traveltime-section" class="traveltime-section">
+    <div class="container">
+      <h2>Calculate Travel Time</h2>
+      <form id="traveltime-form" class="traveltime-form">
+        <input type="text" id="start-location" placeholder="Start Location" required>
+        <input type="text" id="end-location" placeholder="End Location" required>
+        <button type="submit" class="cta-button">Calculate</button>
+      </form>
+      <div id="traveltime-result" class="traveltime-result">
+        <!-- Travel time data will be displayed here -->
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <footer class="footer">
     <div class="container">
@@ -59,37 +59,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="../js/main.js"></script>
-  <script>
-    document.getElementById('traveltime-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const start = document.getElementById('start-location').value;
-      const end = document.getElementById('end-location').value;
-      const resultDiv = document.getElementById('traveltime-result');
-      
-      try {
-        const response = await fetch(`/api/traveltime?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`, {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' }
-        });
-        const data = await response.json();
-        
-        if (response.ok) {
-          resultDiv.innerHTML = `
-            <h3>Travel Time</h3>
-            <p>From: ${data.start}</p>
-            <p>To: ${data.end}</p>
-            <p>Duration: ${data.duration} minutes</p>
-            <p>Distance: ${data.distance} km</p>
-          `;
-          gsap.from(resultDiv, { opacity: 0, y: 20, duration: 1 });
-        } else {
-          resultDiv.innerHTML = `<p class="error">Error: ${data.message}</p>`;
-        }
-      } catch (error) {
-        resultDiv.innerHTML = `<p class="error">Failed to calculate travel time. Please try again.</p>`;
-      }
-    });
-  </script>
+  <script src="../js/traveltime.js"></script>
 </body>
 </html>

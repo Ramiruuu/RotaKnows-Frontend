@@ -17,12 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Login form validation
   const loginForm = document.querySelector('.login-form');
   if (loginForm) {
-    loginForm.addEventListener('submit', e => {
-      const email = loginForm.querySelector('input[type="email"]').value.trim();
-      const password = loginForm.querySelector('input[type="password"]').value;
-      if (!email.includes('@') || password.length < 6) {
-        e.preventDefault();
-        alert('Invalid email or password. Please try again.');
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = loginForm.email.value.trim();
+      const password = loginForm.password.value;
+
+      try {
+        const response = await fetch('http://localhost:8000/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          alert('Login successful!');
+          // Optionally: Save token, redirect, etc.
+        } else {
+          alert(data.message || 'Login failed.');
+        }
+      } catch (error) {
+        alert('Error connecting to server.');
       }
     });
   }
