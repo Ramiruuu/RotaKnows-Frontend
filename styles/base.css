@@ -121,6 +121,7 @@ h1, h2, h3 {
   background: rgba(30, 60, 114, 0.9);
 }
 
+
 @media (max-width: 768px) {
   .header .container {
     flex-direction: column;
