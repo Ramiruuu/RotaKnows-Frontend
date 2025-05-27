@@ -23,6 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    // Add Result text just below the Get Services button (above all results)
+    const resultText = document.createElement('div');
+    resultText.className = 'result-header';
+    resultText.style.textAlign = 'center';
+    resultText.style.marginBottom = '1.2rem';
+    resultText.style.fontSize = '1.08rem';
+    resultText.style.fontWeight = '600';
+    resultText.style.letterSpacing = '0.2px';
+    resultText.innerHTML = `Showing results for <span style="color:#ffd700">${fromLocation}</span> to <span style="color:#ffd700">${toLocation}</span>`;
+
+    // Insert right after the location-input (Get Services button)
+    const locationInput = document.querySelector('.location-input');
+    const prevHeader = locationInput.nextElementSibling && locationInput.nextElementSibling.classList.contains('result-header')
+      ? locationInput.nextElementSibling
+      : null;
+    if (prevHeader) prevHeader.remove();
+    locationInput.parentNode.insertBefore(resultText, locationInput.nextElementSibling);
+
     // 1. Geocode destination to get lat/lon for other services
     locationDiv.innerHTML = `<div class="loading-spinner"><div class="spinner-circle"></div></div>`;
     fetch(`http://127.0.0.1:8000/api/geocode/${encodeURIComponent(toLocation)}`)
