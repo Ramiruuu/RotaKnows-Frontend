@@ -4,194 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services - RotaKnows</title>
-  <link rel="stylesheet" href="../styles/base.css">
-  <link rel="stylesheet" href="../styles/services.css">
-  <link rel="stylesheet" href="../styles/weather.css">
-  <link rel="stylesheet" href="../styles/traveltime.css">
-  <link rel="stylesheet" href="../styles/news.css">
-  <link rel="stylesheet" href="../styles/location.css">
-  <link rel="stylesheet" href="../styles/foursquare.css">
-  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/combine.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="logo">RotaKnows</div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="usecases.html">Use Cases</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-        </ul>
-      </nav>
-      <div class="auth-buttons">
-        <a href="signup.html" class="auth-button">Sign Up</a>
-        <a href="login.html" class="auth-button">Login</a>
-      </div>
-    </div>
-  </header>
 
-<section class="services">
-  <div class="container">
-    <h1>Our Services</h1>
-    <p>Explore our powerful APIs designed to make trip planning seamless and efficient.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h2>LocationIQ API</h2>
-        <p>Access precise geolocation data to map out your routes and destinations with accuracy.</p>
-        <a href="#location-feature-section" class="cta-button">Go</a>
-      </div>
-      <div class="service-card">
-        <h2>Open Weather Map API </h2>
-        <p>Get real-time weather forecasts to plan your trips around optimal conditions.</p>
-        <a href="#weather-feature-section" class="cta-button">Go</a>
-      </div>
-      <div class="service-card">
-        <h2>GNews API</h2>
-        <p>Stay informed with local news and events at your travel destination.</p>
-        <a href="#news-feature-section" class="cta-button">Go</a>
-      </div>
-      <div class="service-card">
-        <h2>TomTom API</h2>
-        <p>Calculate accurate travel durations to optimize your routes and schedules.</p>
-        <a href="#traveltime-feature-section" class="cta-button">Go</a>
-      </div>
-      <div class="service-card">
-        <h2>Foursquare API</h2>
-        <p>Discover nearby places, restaurants, and attractions with Foursquare’s powerful location data.</p>
-        <a href="#foursquare-feature-section" class="cta-button">Go</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Weather Service -->
-<section class="weather-feature-section" id="weather-feature-section">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>Open Weather Map API</h1>
-      <p>Get real-time weather updates to plan your commute with confidence.</p>
-      <form id="weather-form" class="weather-form" style="margin-top: 1.5rem;">
-        <input type="text" id="location-input" placeholder="Enter city or zip code" required>
-        <button type="submit" class="cta-button">Get Weather</button>
-      </form>
-      <div id="weather-result" class="weather-result"></div>
-    </div>
-    <div class="hero-image">
-      <img src="../assets/logo/apiLogo/weatherR.png" alt="Weather Forecast" class="float-image">
-    </div>
-  </div>
-</section>
-
-  <!--Tomtom-->
-<section class="traveltime-feature-section" id="traveltime-feature-section">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>TomTom API</h1>
-      <p>Estimate travel duration for your routes with precision.</p>
-      <form id="traveltime-form" class="traveltime-form" style="margin-top: 1.5rem;">
-        <input type="text" id="start-location" placeholder="Start Location" required>
-        <input type="text" id="end-location" placeholder="End Location" required>
-        <button type="submit" class="cta-button">Calculate</button>
-      </form>
-      <div id="traveltime-result" class="traveltime-result">
-        <!-- Travel time data will be displayed here -->
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="../assets/logo/apiLogo/travel.png" alt="Travel Route" class="float-image">
-    </div>
-  </div>
-</section>
-
-<!--News Services-->
-<section class="news-feature-section" id="news-feature-section">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>GNews API</h1>
-      <p>Stay informed with local news updates for your destination.</p>
-      <form id="news-form" class="news-form" style="margin-top: 1.5rem;">
-        <input type="text" id="news-query" placeholder="Enter location or topic" required>
-        <button type="submit" class="cta-button">Search News</button>
-      </form>
-      <div id="news-result" class="news-grid">
-        <!-- News articles will be displayed here -->
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="../assets/logo/apiLogo/news.png" alt="News Updates" class="float-image">
-    </div>
-  </div>
-</section>
-
-<!--Location Service-->
-<section class="location-feature-section" id="location-feature-section">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>LocationIQ API</h1>
-      <p>Pinpoint any destination with precise geolocation data.</p>
-      <form id="location-form" class="location-form" style="margin-top: 1.5rem;">
-        <input type="text" id="location-input" placeholder="Enter address or coordinates" required>
-        <button type="submit" class="cta-button">Get Location</button>
-      </form>
-      <div id="location-result" class="location-result">
-        <!-- Location data will be displayed here -->
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="../assets/logo/apiLogo/locationApI.png" alt="Location Map" class="float-image">
-    </div>
-  </div>
-</section>
-
-<!-- Foursquare Service -->
-<section class="foursquare-feature-section" id="foursquare-feature-section">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <h1>Foursquare API</h1>
-      <p>Discover nearby places, restaurants, and attractions with Foursquare’s powerful location data.</p>
-      <form id="foursquare-form" class="foursquare-form" style="margin-top: 1.5rem;">
-        <input type="text" id="foursquare-query" placeholder="Enter a location or keyword" required>
-        <button type="submit" class="cta-button">Find Places</button>
-      </form>
-      <div id="foursquare-result" class="foursquare-result">
-        <!-- Foursquare places data will be displayed here -->
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="../assets/logo/apiLogo/foursquare.png" alt="Foursquare Places" class="float-image">
-    </div>
-  </div>
-</section>
-
-<!-- Thankyou Section -->
-<section class="thankyou-section">
-  <div class="container thankyou-container">
-    <div class="thankyou-content">
-      <h2>Thank You for Using RotaKnows Services!</h2>
-      <p>
-        We appreciate your trust in our platform to enhance your travel planning experience.<br>
-        Your journey matters to us—explore, discover, and travel smarter with RotaKnows.
+    <section id="services" class="location-based-section">
+      <div class="container">
+      <h1>Location-Based Services</h1>
+      <p class="services-description">
+        Discover a range of services tailored to your location. Enter your city or address to get real-time weather updates, travel times, local news, and nearby places of interest—all powered by RotaKnows.
       </p>
-    </div>
-    <div class="thankyou-image">
-      <img src="../assets/logo/thanks.png" class="thankyou-img">
-    </div>
-  </div>
-</section>
+      <div class="location-input">
+        <input type="text" id="location" placeholder="Enter your location (e.g., New York, NY)">
+        <button onclick="fetchServices()">Get Services</button>
+      </div>
+        <div id="weather-result" class="weather-result"></div>
+        <div id="traveltime-result" class="traveltime-result"></div>
+        <div id="news" class="news-grid"></div>
+        <div id="location-result" class="location-result"></div>
+        <div id="foursquare-result" class="foursquare-result"></div>
+      </div>
+    </section>
 
-<footer class="footer">
-  <div class="container">
-    <p>© 2025 RotaKnows. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="../js/services.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/combine.js"></script>
 </body>
 </html>
