@@ -12,18 +12,20 @@
 
     <section id="services" class="location-based-section">
       <div class="container">
-      <h1>Location-Based Services</h1>
-      <p class="services-description">
-        Discover a range of services tailored to your location. Enter your city or address to get real-time weather updates, travel times, local news, and nearby places of interest—all powered by RotaKnows.
-      </p>
-      <div class="location-input">
-        <input type="text" id="location" placeholder="Enter your location (e.g., New York, NY)">
-        <button onclick="fetchServices()">Get Services</button>
-      </div>
+        <h1>RotaKnows All-in-One Services</h1>
+        <p class="services-description">
+          Discover a range of services tailored to your destination. Enter your starting location and your destination to get real-time weather updates, travel times, local news, and nearby places of interest for your destination—all powered by RotaKnows.
+        </p>
+        <div class="location-input">
+          <input type="text" id="from-location" placeholder="Enter your starting location (e.g., New York, NY)">
+          <input type="text" id="to-location" placeholder="Enter your destination (e.g., Boston, MA)">
+          <button onclick="fetchServices()">Get Services</button>
+        </div>
         <div id="weather-result" class="weather-result"></div>
-        <div id="traveltime-result" class="traveltime-result"></div>
-        <div id="news" class="news-grid"></div>
         <div id="location-result" class="location-result"></div>
+        <div id="traveltime-result" class="traveltime-result"></div>
+        <div id="fare-result" class="fare-result"></div>
+        <div id="news" class="news-grid"></div>
         <div id="foursquare-result" class="foursquare-result"></div>
       </div>
     </section>
