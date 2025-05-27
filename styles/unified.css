@@ -1,0 +1,201 @@
+/* Unified API Section Styles */
+.unified-services-section {
+  padding: 120px 0;
+  background: linear-gradient(120deg, #2b7cff 0%, #174ea6 100%);
+}
+
+.unified-services-section .container.hero-grid {
+  max-width: 1400px;
+  min-height: 900px;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 56px 24px;
+  box-sizing: border-box;
+}
+
+.unified-services-section .hero-grid {
+  display: flex;
+  flex-direction: row-reverse; /* Image left, text right */
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  padding: 40px 0;
+}
+
+.unified-services-section .hero-text {
+  flex: 1 1 700px;
+  min-width: 400px;
+}
+
+.unified-services-section .hero-text h1,
+.unified-services-section .hero-text p,
+.unified-services-section .hero-text label {
+  color: #fff;
+}
+
+.unified-services-section .hero-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+}
+
+.unified-services-section .hero-text p {
+  font-family: 'Lora', serif;
+  font-size: 1.22rem;
+  margin-bottom: 22px;
+}
+
+.unified-form {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 36px;
+  justify-content: flex-start;
+}
+
+.unified-form input {
+  padding: 14px 24px;
+  font-size: 1.08rem;
+  font-family: 'Lora', serif;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  outline: none;
+  width: 340px;
+  background: #fff;
+  color: #2c3e50;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.unified-form input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.18);
+}
+
+.unified-form input::placeholder {
+  color: #7fa7d9;
+  opacity: 1;
+}
+
+.unified-form .cta-button {
+  padding: 14px 36px;
+  font-size: 1.12rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #2b7cff;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(43,124,255,0.08);
+  transition: background-color 0.3s, color 0.3s, border-color 0.2s, transform 0.2s;
+}
+
+.unified-form .cta-button:hover {
+  background-color: #ffd700;
+  color: #174ea6;
+  border-color: #ffd700;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Unified Results Section */
+.unified-results {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.api-result {
+  background: #fff;
+  color: #174ea6;
+  box-shadow: 0 4px 16px rgba(43,124,255,0.10);
+  padding: 28px 20px;
+  border-radius: 18px;
+  font-family: 'Lora', serif;
+  font-size: 1.08rem;
+}
+
+.api-result h3 {
+  color: #2b7cff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.api-result p {
+  color: #174ea6;
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+  font-family: 'Lora', serif;
+}
+
+.api-result .error {
+  color: #e74c3c;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hero Image Animation */
+.unified-services-section .hero-image {
+  flex: 1 1 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 320px;
+  padding: 2rem 0;
+}
+
+.unified-services-section .hero-image img {
+  width: 100%;
+  max-width: 420px;
+  min-width: 220px;
+  height: auto;
+  border-radius: 28px;
+  background: transparent;
+  object-fit: cover;
+  transition: transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s;
+  display: block;
+  animation: floatY 3.5s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-22px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .unified-services-section .container.hero-grid {
+    padding: 28px 6px;
+    min-height: 700px;
+  }
+  .unified-services-section .hero-grid {
+    gap: 32px;
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .unified-services-section .container.hero-grid {
+    min-height: 500px;
+    padding: 12px 0;
+  }
+  .unified-results {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .unified-services-section {
+    padding: 18px 0;
+  }
+  .unified-services-section .container.hero-grid {
+    min-height: 300px;
+    padding: 4px 0;
+  }
+  .unified-results {
+    gap: 8px;
+  }
+}
