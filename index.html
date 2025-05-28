@@ -15,13 +15,12 @@
       <div class="logo">RotaKnows</div>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pages/blog.html">Blog</a></li>
-          <li><a href="pages/services.html">Services</a></li>
-          <li><a href="pages/usecases.html">Use Cases</a></li>
-          <li><a href="pages/aboutus.html">About Us</a></li>
-          <li><a href="pages/signup.html">Sign Up</a></li>
-          <li><a href="pages/login.html">Login</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="pages/blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="pages/services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a href="pages/usecases.html"><i class="fas fa-lightbulb"></i> Use Cases</a></li>
+            <li><a href="pages/aboutus.html"><i class="fas fa-users"></i> About Us</a></li>
+            <li><a href="pages/profile.html"><i class="fas fa-user"></i> Profile</a></li>
         </ul>
       </nav>
     </div>
@@ -146,6 +145,16 @@
           <h3>Launch & Improvement</h3>
           <p>After launching, we continue to monitor performance and add new features based on user suggestions and needs.</p>
         </div>
+        <div class="planning-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Analytics & Insights</h3>
+          <p>We analyze user data and feedback to identify trends and further optimize the platform for a better experience.</p>
+        </div>
+        <div class="planning-item">
+          <i class="fas fa-hands-helping"></i>
+          <h3>Community Engagement</h3>
+          <p>We actively engage with our user community to foster collaboration and gather ideas for future enhancements.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -153,7 +162,7 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2>Contact Us</h2>
-      <form class="contact-form">
+      <form class="contact-form" id="contactForm">
         <div class="form-group">
           <label><input type="radio" name="contact-type" value="say-hi" checked> Say Hi</label>
           <label><input type="radio" name="contact-type" value="get-quote"> Get a Quote</label>
@@ -162,8 +171,30 @@
         <input type="email" placeholder="Email" required>
         <textarea placeholder="Message" required></textarea>
         <button type="submit" class="submit-button">Send Message</button>
+        <div id="form-loading" style="display:none;margin-top:10px;">Sending...</div>
+        <div id="form-notification" style="display:none;margin-top:10px;color:green;">Message sent!</div>
       </form>
     </div>
+    <script>
+      const form = document.getElementById('contactForm');
+      const loading = document.getElementById('form-loading');
+      const notification = document.getElementById('form-notification');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        loading.style.display = 'block';
+        notification.style.display = 'none';
+        // Simulate async sending
+        setTimeout(() => {
+          loading.style.display = 'none';
+          notification.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            notification.style.display = 'none';
+          }, 2500);
+        }, 1500);
+      });
+    </script>
   </section>
 
   <footer class="footer">

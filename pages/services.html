@@ -7,22 +7,37 @@
   <link rel="stylesheet" href="../styles/combine.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
+  <header class="header">
+    <div class="container">
+      <div class="logo">RotaKnows</div>
+      <nav>
+        <ul>
+            <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="../pages/blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="../pages/services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a href="../pages/usecases.html"><i class="fas fa-lightbulb"></i> Use Cases</a></li>
+            <li><a href="../pages/aboutus.html"><i class="fas fa-users"></i> About Us</a></li>
+            <li><a href="../pages/profile.html"><i class="fas fa-user"></i> Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
     <section id="services" class="location-based-section">
       <div class="container">
         <h1>RotaKnows All-in-One Services</h1>
         <p class="services-description">
-          Discover a range of services tailored to your destination. Enter your starting location and your destination to get real-time weather updates, travel times, local news, and nearby places of interest for your destination—all powered by RotaKnows.
+            Get real-time weather, travel times, local news, and nearby places for your destination powered by APIs. Just enter your starting point and destination.
         </p>
         <div class="location-input">
           <input type="text" id="from-location" placeholder="Enter your starting location (e.g., New York, NY)">
           <input type="text" id="to-location" placeholder="Enter your destination (e.g., Boston, MA)">
           <button onclick="fetchServices()">Get Services</button>
         </div>
-        <div id="weather-result" class="weather-result"></div>
         <div id="location-result" class="location-result"></div>
+        <div id="weather-result" class="weather-result"></div>
         <div id="traveltime-result" class="traveltime-result"></div>
         <div id="fare-result" class="fare-result"></div>
         <div id="news" class="news-grid"></div>

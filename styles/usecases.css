@@ -49,11 +49,11 @@ nav ul li a:hover {
   border-bottom: 2px solid #ffd700;
 }
 
-.about {
-  padding: 4rem 0;
+.usecases {
+  padding: 3rem 0 2rem 0;
 }
 
-.about h1 {
+.usecases h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   text-align: center;
@@ -63,26 +63,15 @@ nav ul li a:hover {
   letter-spacing: 1px;
 }
 
-.about p {
+.usecases p {
   font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  color: #e0e7ef;
   text-align: center;
+  margin-bottom: 2.5rem;
+  color: #e0e7ef;
   font-family: 'Lora', serif;
 }
 
-.about h2 {
-  font-size: 1.8rem;
-  margin: 2rem 0 1rem;
-  text-align: center;
-  color: #2b7cff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.team-grid {
+.usecases-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
@@ -92,55 +81,42 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-.team-member {
+.usecase-card {
   background: rgba(255,255,255,0.13);
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(30,58,138,0.18);
-  border: 1.5px solid #2b7cff22;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 2.5rem 2rem 2rem 2rem;
   min-width: 260px;
-  max-width: 320px;
-  height: 100%;
+  max-width: 350px;
+  text-align: center;
+  color: #fff;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s cubic-bezier(.4,0,.2,1), border-color 0.22s;
+  border: 1.5px solid #2b7cff22;
+  transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
 }
 
-.team-member:hover {
-  transform: translateY(-10px) scale(1.04);
+.usecase-card:hover {
   box-shadow: 0 12px 36px rgba(43,124,255,0.18);
   border-color: #2b7cff;
+  transform: translateY(-10px) scale(1.04);
 }
 
-.team-member img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.1rem;
-  border: 4px solid #ffd700;
-  background: #fff;
-  box-shadow: 0 2px 12px #ffd70033;
-  transition: border-color 0.22s;
-}
-
-.team-member h3 {
+.usecase-card h2 {
   font-family: 'Montserrat', sans-serif;
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   color: #ffd700;
-  font-size: 1.22rem;
-  margin: 0 0 0.3rem 0;
-  letter-spacing: 0.4px;
-  font-weight: 600;
-  text-align: center;
 }
 
-.team-member p {
+.usecase-card p {
+  font-size: 1.05rem;
+  margin-bottom: 0;
   color: #e0e7ef;
-  font-size: 1.04rem;
-  margin: 0;
-  text-align: center;
-  line-height: 1.6;
   font-family: 'Lora', serif;
 }
 
@@ -157,29 +133,28 @@ nav ul li a:hover {
     gap: 1rem;
     padding: 0 1rem;
   }
-  .team-grid {
+  .usecases-grid {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
   }
-  .team-member {
+  .usecase-card {
+    min-width: 90vw;
     max-width: 98vw;
-    padding: 2rem 0.5rem 1.5rem 0.5rem;
   }
-  .about h1 {
+  .usecases h1 {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .team-member img {
-    width: 90px;
-    height: 90px;
+  .usecase-card {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
   }
-  .about {
+  .usecases {
     padding: 1.2rem 0 1.2rem 0;
   }
-  .about h1 {
+  .usecases h1 {
     font-size: 1.3rem;
   }
   .logo {
