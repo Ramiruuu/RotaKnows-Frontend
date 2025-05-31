@@ -41,7 +41,20 @@
         <p class="profile-location" id="profile-location"><i class="fas fa-map-marker-alt"></i> Cagayan de Oro, PH</p>
         <div class="profile-actions">
           <button class="edit-btn"><i class="fas fa-user-edit"></i> Edit Profile</button>
-          <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <button class="logout-btn" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <script>
+              document.getElementById('logout-btn').addEventListener('click', function() {
+                const btn = this;
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                setTimeout(function() {
+                  btn.innerHTML = '<i class="fas fa-check-circle"></i> Successful logout';
+                  setTimeout(function() {
+                    window.location.href = '../pages/auth.html';
+                  }, 1200);
+                }, 1200);
+              });
+            </script>
         </div>
       </div>
       <div class="profile-details">
