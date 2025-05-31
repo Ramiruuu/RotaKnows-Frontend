@@ -52,7 +52,7 @@ if (loginForm) {
         const found = validUsers.some(user => user.email === email && user.password === password);
         if (found) {
             alert("Login successful!");
-            // Redirect or further logic here
+                    window.location.href = "../index.html"; // Redirect to index.html
         } else {
             alert("Invalid email or password.");
         }
